@@ -6,8 +6,26 @@ import { Calendar } from '../../src';
 import * as serviceWorker from './serviceWorker';
 
 const App = () => {
-  const [selectedDay, setValue] = useState([]);
-  return <Calendar value={selectedDay} onChange={setValue} shouldHighlightWeekends />;
+
+  const defaultRange = {
+    from: null,
+    to: null,
+  };
+
+  const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
+
+  return (
+    <>
+      <Calendar
+        value={selectedDayRange}
+        onChange={setSelectedDayRange}
+        shouldHighlightWeekends
+        locale="fa"
+        colorPrimary="#4156D9"
+        colorPrimaryLight="#A0AAEC"
+      />
+    </>
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));

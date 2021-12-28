@@ -1,3 +1,7 @@
+body {
+  padding: 50px 0;
+}
+
 .DatePicker {
   position: relative;
   display: inline-block;
@@ -73,6 +77,8 @@
   z-index: 10;
   max-width: 90vw;
   min-height: 36.7em;
+  max-height: 500px !important;
+  overflow-y: auto;
 }
 
 .Calendar.-noFocusOutline *:focus {
@@ -85,6 +91,39 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+}
+
+.Calendar__newheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.Calendar__newheader button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  outline: none;
+  border: 0;
+  transform: rotate(90deg);
+}
+
+.Calendar__newheader button span {
+  font-size: 10px;
+}
+
+.Calendar__newheader h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.Calendar__newheader p {
+  color: #575757;
+  font-size: 12px;
 }
 
 .Calendar__header {
@@ -431,23 +470,20 @@
   width: calc(100% / 7);
   text-align: center;
   text-decoration: none;
+  color: #999999;
 }
 
 .Calendar__sectionWrapper {
   position: relative;
   flex: 1;
-  overflow: hidden;
 }
 
 .Calendar__section {
   display: flex;
   flex-direction: column;
-  padding: 0 3.2em;
-  position: absolute;
+  padding: 0 10px;
   color: var(--cl-color-black);
-  top: 0;
   padding-top: 0.5em;
-  left: 0;
   width: 100%;
   will-change: transform, opacity;
   transform: translateZ(0);
@@ -456,26 +492,26 @@
 }
 
 .Calendar__section.-hiddenPrevious {
-  opacity: 0.5;
-  transform: translateX(-90%);
+  /* opacity: 0.5;
+  transform: translateX(-90%); */
 }
 
 .Calendar.-fa .Calendar__section.-hiddenPrevious {
-  transform: translateX(90%);
+  /* transform: translateX(90%); */
 }
 
 .Calendar__section.-hiddenNext {
-  opacity: 0.5;
-  transform: translateX(90%);
+  /* opacity: 0.5;
+  transform: translateX(90%); */
 }
 
 .Calendar.-fa .Calendar__section.-hiddenNext {
-  transform: translateX(-90%);
+  /* transform: translateX(-90%); */
 }
 
 .Calendar__section.-shown {
-  opacity: 1;
-  transform: translateX(0);
+  /* opacity: 1;
+  transform: translateX(0); */
 }
 
 .Calendar__section.-shownAnimated {
@@ -493,10 +529,10 @@
   text-align: center;
   padding: calc(0.25em - 1px) 0;
   font-size: 1.6em;
-  border-radius: 50%;
+  border-radius: 8px;
   transition: 0.2s;
-  border: 1px solid transparent;
-  margin-bottom: 0.3em;
+  border: 1px solid #E6E7F2;
+  margin: 4px 5px;
   color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
@@ -504,9 +540,13 @@
   cursor: pointer;
 }
 
+.border-zero {
+  border-width: 0 !important;
+}
+
 .Calendar__day:focus {
-  outline: 1px dashed rgba(0, 0, 0, 0.4);
-  outline-offset: 2px;
+  /* outline: 1px dashed rgba(0, 0, 0, 0.4);
+  outline-offset: 2px; */
 }
 
 .Calendar__day.-en {
@@ -520,10 +560,7 @@
 }
 
 .Calendar__day:not(.-blank):not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween):not(.-selected):hover {
-  background: #eaeaea;
-  border-radius: 50%;
-  color: var(--cl-color-black);
-  border-color: transparent;
+  border: 1.5px solid #4156D9;
 }
 
 .Calendar__day.-selected,

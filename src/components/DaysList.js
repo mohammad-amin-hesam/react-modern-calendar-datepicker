@@ -195,7 +195,7 @@ const DaysList = ({
       <div
         tabIndex={shouldEnableKeyboardNavigation ? '0' : '-1'}
         key={id}
-        className={`Calendar__day -${locale} ${additionalClass}`}
+        className={`Calendar__day -${locale} ${additionalClass} ${isStandard ? "" : "border-zero"}`}
         onClick={() => {
           handleDayPress({ ...dayItem, isDisabled });
         }}
@@ -256,7 +256,7 @@ const DaysList = ({
         className="Calendar__section -shown"
         role="rowgroup"
       >
-        {renderMonthDays(true)}
+        {renderMonthDays(0)}
       </div>
       <div
         onAnimationEnd={e => {
@@ -266,7 +266,17 @@ const DaysList = ({
         className="Calendar__section -hiddenNext"
         role="rowgroup"
       >
-        {renderMonthDays(false)}
+        {renderMonthDays(1)}
+      </div>
+      <div
+        onAnimationEnd={e => {
+          handleSlideAnimationEnd(e);
+          onSlideChange();
+        }}
+        className="Calendar__section -hiddenNext"
+        role="rowgroup"
+      >
+        {renderMonthDays(2)}
       </div>
     </div>
   );

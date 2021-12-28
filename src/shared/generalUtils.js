@@ -24,7 +24,12 @@ const shallowClone = value => ({ ...value });
 const deepCloneObject = obj => JSON.parse(JSON.stringify(obj));
 
 const getDateAccordingToMonth = (date, direction) => {
-  const toSum = direction === 'NEXT' ? 1 : -1;
+  let toSum = direction === 'NEXT' ? 1 : -1;
+
+  if (typeof direction === 'number') {
+    toSum = direction;
+  }
+
   let newMonthIndex = date.month + toSum;
   let newYear = date.year;
   if (newMonthIndex < 1) {

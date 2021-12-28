@@ -5,7 +5,7 @@ import { getDateAccordingToMonth, shallowClone, getValueType } from './shared/ge
 import { DAY_SHAPE, TYPE_SINGLE_DATE, TYPE_RANGE, TYPE_MUTLI_DATE } from './shared/constants';
 import { useLocaleUtils, useLocaleLanguage } from './shared/hooks';
 
-import { Header, MonthSelector, YearSelector, DaysList } from './components';
+import { NewHeader, MonthSelector, YearSelector, DaysList } from './components';
 
 const Calendar = ({
   value,
@@ -118,7 +118,7 @@ const Calendar = ({
       }}
       ref={calendarElement}
     >
-      <Header
+      {/* <Header
         maximumDate={maximumDate}
         minimumDate={minimumDate}
         activeDate={activeDate}
@@ -129,7 +129,8 @@ const Calendar = ({
         isMonthSelectorOpen={mainState.isMonthSelectorOpen}
         isYearSelectorOpen={mainState.isYearSelectorOpen}
         locale={locale}
-      />
+      /> */}
+      <NewHeader />
 
       <MonthSelector
         isOpen={mainState.isMonthSelectorOpen}

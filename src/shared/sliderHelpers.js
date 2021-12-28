@@ -2,9 +2,18 @@ import { getDateAccordingToMonth } from './generalUtils';
 
 const getSlideDate = ({ parent, isInitialActiveChild, activeDate, monthChangeDirection }) => {
   if (!parent) {
-    return isInitialActiveChild ? activeDate : getDateAccordingToMonth(activeDate, 'NEXT');
+    switch (isInitialActiveChild) {
+      case 1:
+        return getDateAccordingToMonth(activeDate, isInitialActiveChild);
+
+      case 2:
+        return getDateAccordingToMonth(activeDate, isInitialActiveChild);
+
+      default:
+        return activeDate;
+    }
   }
-  const child = parent.children[isInitialActiveChild ? 0 : 1];
+  const child = parent.children[isInitialActiveChild];
   const isActiveSlide =
     child.classList.contains('-shown') || child.classList.contains('-shownAnimated'); // check -shownAnimated for Safari bug
   return isActiveSlide ? activeDate : getDateAccordingToMonth(activeDate, monthChangeDirection);
