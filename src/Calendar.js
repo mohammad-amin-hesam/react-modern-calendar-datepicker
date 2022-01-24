@@ -76,12 +76,12 @@ const Calendar = ({
     </abbr>
   ));
 
-  const handleMonthChange = direction => {
-    setMainState({
-      ...mainState,
-      monthChangeDirection: direction,
-    });
-  };
+  // const handleMonthChange = direction => {
+  //   setMainState({
+  //     ...mainState,
+  //     monthChangeDirection: direction,
+  //   });
+  // };
 
   const updateDate = () => {
     setMainState({
@@ -91,21 +91,21 @@ const Calendar = ({
     });
   };
 
-  const selectMonth = newMonthNumber => {
-    setMainState({
-      ...mainState,
-      activeDate: { ...activeDate, month: newMonthNumber },
-      isMonthSelectorOpen: false,
-    });
-  };
+  // const selectMonth = newMonthNumber => {
+  //   setMainState({
+  //     ...mainState,
+  //     activeDate: { ...activeDate, month: newMonthNumber },
+  //     isMonthSelectorOpen: false,
+  //   });
+  // };
 
-  const selectYear = year => {
-    setMainState({
-      ...mainState,
-      activeDate: { ...activeDate, year },
-      isYearSelectorOpen: false,
-    });
-  };
+  // const selectYear = year => {
+  //   setMainState({
+  //     ...mainState,
+  //     activeDate: { ...activeDate, year },
+  //     isYearSelectorOpen: false,
+  //   });
+  // };
 
   return (
     <div
@@ -132,16 +132,16 @@ const Calendar = ({
       /> */}
       <NewHeader />
 
-      <MonthSelector
+      {/* <MonthSelector
         isOpen={mainState.isMonthSelectorOpen}
         activeDate={activeDate}
         onMonthSelect={selectMonth}
         maximumDate={maximumDate}
         minimumDate={minimumDate}
         locale={locale}
-      />
+      /> */}
 
-      <YearSelector
+      {/* <YearSelector
         isOpen={mainState.isYearSelectorOpen}
         activeDate={activeDate}
         onYearSelect={selectYear}
@@ -150,7 +150,7 @@ const Calendar = ({
         maximumDate={maximumDate}
         minimumDate={minimumDate}
         locale={locale}
-      />
+      /> */}
 
       <div className="Calendar__weekDays">{weekdays}</div>
 

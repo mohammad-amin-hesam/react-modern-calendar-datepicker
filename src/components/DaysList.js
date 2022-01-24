@@ -172,7 +172,8 @@ const DaysList = ({
     if (isSelected || isStartingDayRange || isToday || day === 1) return true;
   };
 
-  const renderEachWeekDays = ({ id, value: day, month, year, isStandard }, index) => {
+  const renderEachWeekDays = (dayProps, index) => {    
+    const { id, value: day, month, year, isStandard } = dayProps;
     const dayItem = { day, month, year };
     const isInDisabledDaysRange = disabledDays.some(disabledDay => isSameDay(dayItem, disabledDay));
     const isBeforeMinimumDate = isBeforeDate(dayItem, minimumDate);
@@ -195,7 +196,7 @@ const DaysList = ({
       <div
         tabIndex={shouldEnableKeyboardNavigation ? '0' : '-1'}
         key={id}
-        className={`Calendar__day -${locale} ${additionalClass} ${isStandard ? "" : "border-zero"}`}
+        className={`Calendar__day -${locale} ${additionalClass} ${isStandard ? '' : 'border-zero'}`}
         onClick={() => {
           handleDayPress({ ...dayItem, isDisabled });
         }}
@@ -240,6 +241,13 @@ const DaysList = ({
     handleKeyboardNavigation(e, { allowVerticalArrows: true });
   };
 
+  const renderDate = isInitialActiveChild => {
+    return getSlideDate({
+      activeDate,
+      isInitialActiveChild,
+    });
+  };
+
   return (
     <div
       ref={calendarSectionWrapper}
@@ -248,6 +256,9 @@ const DaysList = ({
       data-testid="days-section-wrapper"
       onKeyDown={handleKeyDown}
     >
+      <span className="Calendar__month">{`${getMonthName(renderDate(0).month)} ${
+        renderDate(0).year
+      }`}</span>
       <div
         onAnimationEnd={e => {
           handleSlideAnimationEnd(e);
@@ -258,6 +269,9 @@ const DaysList = ({
       >
         {renderMonthDays(0)}
       </div>
+      <span className="Calendar__month">{`${getMonthName(renderDate(1).month)} ${
+        renderDate(1).year
+      }`}</span>
       <div
         onAnimationEnd={e => {
           handleSlideAnimationEnd(e);
@@ -268,6 +282,9 @@ const DaysList = ({
       >
         {renderMonthDays(1)}
       </div>
+      <span className="Calendar__month">{`${getMonthName(renderDate(2).month)} ${
+        renderDate(2).year
+      }`}</span>
       <div
         onAnimationEnd={e => {
           handleSlideAnimationEnd(e);

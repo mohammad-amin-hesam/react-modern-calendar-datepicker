@@ -17,28 +17,60 @@ This set of fonts are used in this project under the license: GFHUSE
 *
 **/
 @font-face {
-	font-family: iranyekan;
-	font-style: normal;
-	font-weight: bold;
-	font-display: swap;
-	src: local('iranyekan'),
-		 url('./woff/iranyekanwebboldfanum.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		 url('./ttf/iranyekanwebboldfanum.ttf') format('truetype');
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: local('iranyekan'), url('./woff/iranyekanwebboldfanum.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./ttf/iranyekanwebboldfanum.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: iranyekan;
-	font-style: normal;
-	font-weight: normal;
-	font-display: swap;
-	src: local('iranyekan'),
-		 url('./woff/iranyekanwebregularfanum.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		 url('./ttf/iranyekanwebregularfanum.ttf') format('truetype');
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local('iranyekan'), url('./woff/iranyekanwebregularfanum.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./ttf/iranyekanwebregularfanum.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: normal;
-	src: url('./ttf/OpenSans-Regular.ttf');
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./ttf/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./iranyekan-fonts/woff/iranyekanwebregularfanum.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: bold;
+  font-weight: 700;
+  src: url('./iranyekan-fonts/woff/iranyekanwebboldfanum.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: bolder;
+  font-weight: 800;
+  src: url('./iranyekan-fonts/woff/iranyekanwebextraboldfanum.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: medium;
+  font-weight: 500;
+  src: url('./iranyekan-fonts/woff/iranyekanwebmediumfanum.woff') format('woff');
+  font-display: swap;
+}
+
+
+* {
+  font-family: iranyekan;
 }
