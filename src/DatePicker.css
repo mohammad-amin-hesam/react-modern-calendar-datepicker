@@ -461,7 +461,7 @@ body {
   margin: 0 16px 0;
   position: relative;
   padding-bottom: 8px;
-  border-bottom: 1px solid #F2F2F2;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .Calendar__weekDay {
@@ -532,7 +532,8 @@ body {
   font-size: 1.6em;
   border-radius: 8px;
   transition: 0.2s;
-  border: 1px solid #e6e7f2;
+  border: 0;
+  background: #eceefb;
   margin: 4px 2.5px;
   color: rgba(0, 0, 0, 0.8);
   display: flex;
@@ -543,6 +544,7 @@ body {
 
 .border-zero {
   border-width: 0 !important;
+  background: transparent;
 }
 
 .Calendar__day:focus {
@@ -602,11 +604,15 @@ body {
 
 .Calendar__day.-selectedBetween {
   background: var(--cl-color-primary-light);
-  color: #404040;
+  color: #fff;
   border-radius: 0;
   margin-right: 0;
   margin-left: 0;
   width: 50px !important;
+}
+
+.Calendar__day.-selectedBetween + .Calendar__day.-selectedBetween {
+  margin-right: 1px;
 }
 
 .Calendar__day.-weekend:not(.-selected):not(.-blank):not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween) {
@@ -669,7 +675,6 @@ body {
     transform: translateX(0);
   }
 }
-
 
 .Calendar__month {
   display: flex;

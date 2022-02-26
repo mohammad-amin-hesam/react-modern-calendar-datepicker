@@ -6,7 +6,6 @@ import { Calendar } from '../../src';
 import * as serviceWorker from './serviceWorker';
 
 const App = () => {
-
   const defaultRange = {
     from: null,
     to: null,
@@ -22,7 +21,7 @@ const App = () => {
         shouldHighlightWeekends
         locale="fa"
         colorPrimary="#4156D9"
-        colorPrimaryLight="#A0AAEC"
+        colorPrimaryLight="#7A89E4"
       />
     </>
   );

@@ -172,7 +172,7 @@ const DaysList = ({
     if (isSelected || isStartingDayRange || isToday || day === 1) return true;
   };
 
-  const renderEachWeekDays = (dayProps, index) => {    
+  const renderEachWeekDays = (dayProps, index) => {
     const { id, value: day, month, year, isStandard } = dayProps;
     const dayItem = { day, month, year };
     const isInDisabledDaysRange = disabledDays.some(disabledDay => isSameDay(dayItem, disabledDay));
@@ -192,6 +192,7 @@ const DaysList = ({
       isOnActiveSlide,
       isStandard,
     });
+
     return (
       <div
         tabIndex={shouldEnableKeyboardNavigation ? '0' : '-1'}
